@@ -3,10 +3,14 @@ F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDru
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.exe
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.pdb
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.xml
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Common.Logging.dll
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Common.Logging.Log4Net.dll
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\CookComputing.XmlRpcV2.dll
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\log4net.dll
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Microsoft.Http.dll
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Microsoft.Http.Extensions.dll
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Newtonsoft.Json.Net35.dll
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\log4net.xml
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Microsoft.Http.pdb
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Microsoft.Http.Extensions.pdb
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ResolveAssemblyReference.cache

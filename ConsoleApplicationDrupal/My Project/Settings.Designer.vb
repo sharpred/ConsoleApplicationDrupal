@@ -65,28 +65,28 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""menu.get""")>  _
-        Public ReadOnly Property service() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("play.sharpred.co.uk")>  _
+        Public ReadOnly Property domain() As String
             Get
-                Return CType(Me("service"),String)
+                Return CType(Me("domain"),String)
             End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("menu_id")>  _
-        Public ReadOnly Property serviceParameter() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("""ideasbook""")>  _
+        Public ReadOnly Property viewname() As String
             Get
-                Return CType(Me("serviceParameter"),String)
+                Return CType(Me("viewname"),String)
             End Get
         End Property
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""menu-ideasbook""")>  _
-        Public ReadOnly Property serviceValue() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("6fb55878373766f035e730aa07fc114a")>  _
+        Public ReadOnly Property API_key() As String
             Get
-                Return CType(Me("serviceValue"),String)
+                Return CType(Me("API_key"),String)
             End Get
         End Property
     End Class

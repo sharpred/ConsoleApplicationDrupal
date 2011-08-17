@@ -49,8 +49,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.2.0.0\lib\2.0\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>..\packages\Common.Logging.Log4Net.2.0.0\lib\2.0\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
     <Reference Include="CookComputing.XmlRpcV2">
       <HintPath>..\..\..\xml-rpc\bin\CookComputing.XmlRpcV2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Http">
       <HintPath>C:\Program Files\Microsoft WCF REST\WCF REST Starter Kit Preview 2\Assemblies\Microsoft.Http.dll</HintPath>
@@ -82,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrupalForm.vb" />
+    <Compile Include="DrupalHelper.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -120,6 +132,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="content.xml">

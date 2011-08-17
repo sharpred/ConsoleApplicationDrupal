@@ -13,7 +13,7 @@ Module Module1
         Try
             Dim http As New HttpClient(My.Settings.myURL)
             Dim drupalform As New DrupalForm
-            Dim form As HttpMultipartMimeForm = drupalform.create("view", False)
+            Dim form As HttpMultipartMimeForm = drupalform.create("view", False, True)
             Dim response As HttpResponseMessage = http.Post("/services/json", form.CreateHttpContent)
             response.EnsureStatusIsSuccessful()
             output = response.Content.ReadAsString
