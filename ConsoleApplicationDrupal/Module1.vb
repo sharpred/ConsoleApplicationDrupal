@@ -27,7 +27,10 @@ Module Module1
             Dim conn As HttpMultipartMimeForm = drupalform.create("system.connect", False, "")
             response = http.Post(My.Settings.service, conn.CreateHttpContent)
             connectoutput = response.Content.ReadAsString
+            'parse the output and get the session ID
             job = JObject.Parse(connectoutput)
+            'the first part of the json file is the header confirming if the file is an error, the last part
+            'contains the data.  The first part of the data contains the session id (sessid)
             jtok = job.Last.First
             sess = jtok.SelectToken("sessid")
 
@@ -38,6 +41,7 @@ Module Module1
             response = http.Post(My.Settings.service, login.CreateHttpContent)
             response.EnsureStatusIsSuccessful()
             loginoutput = response.Content.ReadAsString
+            'need to get the session id from this connection and use it from hereon
             job = JObject.Parse(loginoutput)
             jtok = job.Last.First
             sess = jtok.SelectToken("sessid")
