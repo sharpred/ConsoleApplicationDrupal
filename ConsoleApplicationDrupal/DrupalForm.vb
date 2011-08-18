@@ -50,7 +50,15 @@ Public Class DrupalForm
                 Case "node"
                     ' to be added
                 Case "menu"
-                    'to be added
+                    method = "menu.get"
+                    'commented out as defaults to primary menus
+                    'Dim menu As String = "primary-links"
+                    'Dim menusb As New StringBuilder()
+                    'menusb.Append("""")
+                    'menusb.Append(password)
+                    'menusb.Append("""")
+                    'form.Add("menu_id", menusb.ToString())
+
                 Case "view"
                     'method needs to be in quotes
                     'trying it without quotes for hash

@@ -13,6 +13,7 @@ Module Module1
     Dim connectoutput As String
     Dim loginoutput As String
     Dim content As String
+    Dim menus As String
     Dim response As HttpResponseMessage = Nothing
     Dim sessID As String = Nothing
     Dim job As JObject = Nothing
@@ -48,6 +49,13 @@ Module Module1
             response.EnsureStatusIsSuccessful()
             content = response.Content.ReadAsString
             Console.WriteLine(content)
+
+            Dim menuform As HttpMultipartMimeForm = drupalform.create("menu", True, sess)
+            response = http.Post(My.Settings.service, menuform.CreateHttpContent)
+            response.EnsureStatusIsSuccessful()
+            menus = response.Content.ReadAsString
+            Console.WriteLine(menus)
+
             'log out 
             Dim logout As HttpMultipartMimeForm = drupalform.create("user.logout", True, sess)
             response = http.Post(My.Settings.service, logout.CreateHttpContent)
@@ -63,6 +71,13 @@ Module Module1
             sw.Write(content)
             sw.Flush()
             sw.Close()
+
+            Dim mw As New StreamWriter("menus.json")
+            mw.Write(menus)
+            mw.Flush()
+            mw.Close()
+
+
 
         Catch ex As Exception
 
