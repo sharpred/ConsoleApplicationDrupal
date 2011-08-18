@@ -11,10 +11,11 @@ Module Module1
     Dim output As String
     Sub Main()
         Try
-            Dim http As New HttpClient(My.Settings.myURL)
+            Dim myURL As String = My.Settings.protocol & My.Settings.domain
+            Dim http As New HttpClient(myURL)
             Dim drupalform As New DrupalForm
-            Dim form As HttpMultipartMimeForm = drupalform.create("view", False, True)
-            Dim response As HttpResponseMessage = http.Post("/services/json", form.CreateHttpContent)
+            Dim form As HttpMultipartMimeForm = drupalform.create("view", True)
+            Dim response As HttpResponseMessage = http.Post(My.Settings.service, form.CreateHttpContent)
             response.EnsureStatusIsSuccessful()
             output = response.Content.ReadAsString
             Dim sw As New StreamWriter("node_out.json")

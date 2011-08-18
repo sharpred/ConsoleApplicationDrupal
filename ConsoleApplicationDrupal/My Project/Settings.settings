@@ -2,17 +2,20 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="myURL" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://play.sharpred.co.uk</Value>
-    </Setting>
-    <Setting Name="domain" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">play.sharpred.co.uk</Value>
-    </Setting>
     <Setting Name="viewname" Type="System.String" Scope="Application">
       <Value Profile="(Default)">"ideasbook"</Value>
     </Setting>
     <Setting Name="API_key" Type="System.String" Scope="Application">
       <Value Profile="(Default)">6fb55878373766f035e730aa07fc114a</Value>
+    </Setting>
+    <Setting Name="protocol" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="domain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">play.sharpred.co.uk</Value>
+    </Setting>
+    <Setting Name="service" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">/services/json</Value>
     </Setting>
   </Settings>
 </SettingsFile>

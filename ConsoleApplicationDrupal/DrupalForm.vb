@@ -2,7 +2,7 @@
 Imports System.Text
 
 Public Class DrupalForm
-    Public Function create(ByVal type As String, ByVal formatoutput As Boolean, ByVal authenticate As Boolean) As HttpMultipartMimeForm
+    Public Function create(ByVal type As String, ByVal authenticate As Boolean) As HttpMultipartMimeForm
         Dim form As New HttpMultipartMimeForm
         Dim helper As New DrupalHelper
         Dim method As String = Nothing
@@ -20,14 +20,9 @@ Public Class DrupalForm
                     method = """views.get"""
                     form.Add("method", method)
                     form.Add("view_name", My.Settings.viewname)
-                    If formatoutput = True Then
-                        'default is false, so not added
-                        form.Add("format_output", "TRUE")
-                    End If
                 Case Else
                     Throw New Exception("invalid method specified: must be node, menu or view")
             End Select
-            
 
             If authenticate = True Then
                 'create an SHA-256 hash of the timestamp, domain, nonce, and method name delimited by semicolons
@@ -53,12 +48,39 @@ Public Class DrupalForm
 
                     Dim hash As String = helper.getHMAC(sb.ToString(), apikey)
 
+                    'problems with adding quotes to my fields, so doing it the long way!!
+                    Dim hashsb As New StringBuilder()
+                    hashsb.Append("""")
+                    hashsb.Append(hash)
+                    hashsb.Append("""")
+
+                    Dim noncesb As New StringBuilder()
+                    noncesb.Append("""")
+                    noncesb.Append(nonce)
+                    noncesb.Append("""")
+
+                    Dim sessionIDsb As New StringBuilder()
+                    sessionIDsb.Append("""")
+                    sessionIDsb.Append(sessionID)
+                    sessionIDsb.Append("""")
+
+                    Dim domainsb As New StringBuilder()
+                    domainsb.Append("""")
+                    domainsb.Append(domain)
+                    domainsb.Append("""")
+
                     If hash IsNot Nothing Then
-                        form.Add("hash", hash)
-                        form.Add("domain_name", My.Settings.domain)
+                        form.Add("hash", hashsb.ToString())
+                        form.Add("domain_name", domainsb.ToString())
                         form.Add("domain_time_stamp", timestamp)
-                        form.Add("nonce", nonce)
-                        form.Add("sessid", sessionID)
+                        form.Add("nonce", noncesb.ToString())
+                        form.Add("sessid", sessionIDsb.ToString())
+                        'form.Add("display_id", "wibble")
+                        'form.Add("args", "wibbleagain")
+                        'arbitrary offset and limit to see what ends up in array
+                        'form.Add("offset", "5")
+                        'form.Add("limit", "10")
+                        form.Add("format_output", "TRUE")
                         Console.WriteLine("API: " & My.Settings.API_key)
                         Console.WriteLine("method: " & method)
                         Console.WriteLine("view name: " & My.Settings.viewname)

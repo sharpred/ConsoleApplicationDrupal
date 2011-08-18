@@ -56,10 +56,28 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("http://play.sharpred.co.uk")>  _
-        Public ReadOnly Property myURL() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("""ideasbook""")>  _
+        Public ReadOnly Property viewname() As String
             Get
-                Return CType(Me("myURL"),String)
+                Return CType(Me("viewname"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("6fb55878373766f035e730aa07fc114a")>  _
+        Public ReadOnly Property API_key() As String
+            Get
+                Return CType(Me("API_key"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://")>  _
+        Public ReadOnly Property protocol() As String
+            Get
+                Return CType(Me("protocol"),String)
             End Get
         End Property
         
@@ -74,19 +92,10 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("""ideasbook""")>  _
-        Public ReadOnly Property viewname() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("/services/json")>  _
+        Public ReadOnly Property service() As String
             Get
-                Return CType(Me("viewname"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("6fb55878373766f035e730aa07fc114a")>  _
-        Public ReadOnly Property API_key() As String
-            Get
-                Return CType(Me("API_key"),String)
+                Return CType(Me("service"),String)
             End Get
         End Property
     End Class

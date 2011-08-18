@@ -39,7 +39,7 @@ Public Class DrupalHelper
     End Function
 
     Public Function getHMAC(ByVal message As String, ByVal key As String) As String
-        Dim sbinary As String = Nothing
+        Dim sbinary As String = String.Empty
         Dim encoding As New ASCIIEncoding()
         Try
             Dim i As Integer = 0
