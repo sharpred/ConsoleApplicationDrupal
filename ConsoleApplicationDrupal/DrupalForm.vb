@@ -2,13 +2,51 @@
 Imports System.Text
 
 Public Class DrupalForm
-    Public Function create(ByVal type As String, ByVal authenticate As Boolean) As HttpMultipartMimeForm
+    
+    Public Function create(ByVal type As String, ByVal authenticate As Boolean, ByVal sessID As String) As HttpMultipartMimeForm
         Dim form As New HttpMultipartMimeForm
         Dim helper As New DrupalHelper
         Dim method As String = Nothing
         Dim methodstring As String = Nothing
+        Dim username As String = "subscriber"
+        Dim password As String = "qwerty123"
+        Dim methodsb As New StringBuilder()
+
         Try
             Select Case type
+                Case "system.connect"
+                    method = "system.connect"
+
+                Case "user.login"
+
+                    method = "user.login"
+
+                    Dim usernamesb As New StringBuilder()
+                    usernamesb.Append("""")
+                    usernamesb.Append(username)
+                    usernamesb.Append("""")
+
+                    Dim passwordsb As New StringBuilder()
+                    passwordsb.Append("""")
+                    passwordsb.Append(password)
+                    passwordsb.Append("""")
+                    form.Add("username", usernamesb.ToString())
+                    form.Add("password", passwordsb.ToString())
+
+                Case "user.logout"
+
+                    method = "user.logout"
+
+                    Dim usernamesb As New StringBuilder()
+                    usernamesb.Append("""")
+                    usernamesb.Append(username)
+                    usernamesb.Append("""")
+
+                    Dim passwordsb As New StringBuilder()
+                    passwordsb.Append("""")
+                    passwordsb.Append(password)
+                    passwordsb.Append("""")
+
                 Case "node"
                     ' to be added
                 Case "menu"
@@ -16,13 +54,20 @@ Public Class DrupalForm
                 Case "view"
                     'method needs to be in quotes
                     'trying it without quotes for hash
-                    methodstring = "views.get"
-                    method = """views.get"""
-                    form.Add("method", method)
+
+                    method = "views.get"
+
                     form.Add("view_name", My.Settings.viewname)
+                    form.Add("format_output", "TRUE")
+                    Console.WriteLine("view name: " & My.Settings.viewname)
                 Case Else
                     Throw New Exception("invalid method specified: must be node, menu or view")
             End Select
+
+            methodsb.Append("""")
+            methodsb.Append(method)
+            methodsb.Append("""")
+            form.Add("method", methodsb.ToString())
 
             If authenticate = True Then
                 'create an SHA-256 hash of the timestamp, domain, nonce, and method name delimited by semicolons
@@ -32,17 +77,20 @@ Public Class DrupalForm
                 Dim apikey As String = My.Settings.API_key
                 Dim timestamp As String = helper.getUnixTimestamp()
                 Dim nonce As String = helper.getNonce(10)
-                Dim sessionID As String = helper.getNonce(20)
+                'not needed as getting session from system.connect call
+                'If sessID = "" Then
+                'sessionID = helper.getNonce(20)
+                'End If
                 Dim sb As New StringBuilder()
 
-                If timestamp IsNot Nothing And nonce IsNot Nothing And sessionID IsNot Nothing And domain IsNot Nothing Then
+                If timestamp IsNot Nothing And nonce IsNot Nothing And sessID IsNot Nothing And domain IsNot Nothing Then
                     sb.Append(timestamp)
                     sb.Append(";")
                     sb.Append(domain)
                     sb.Append(";")
                     sb.Append(nonce)
                     sb.Append(";")
-                    sb.Append(methodstring)
+                    sb.Append(method)
 
                     Console.WriteLine("prehash string: " & sb.ToString())
 
@@ -59,10 +107,10 @@ Public Class DrupalForm
                     noncesb.Append(nonce)
                     noncesb.Append("""")
 
-                    Dim sessionIDsb As New StringBuilder()
-                    sessionIDsb.Append("""")
-                    sessionIDsb.Append(sessionID)
-                    sessionIDsb.Append("""")
+                    Dim sessIDsb As New StringBuilder()
+                    sessIDsb.Append("""")
+                    sessIDsb.Append(sessID)
+                    sessIDsb.Append("""")
 
                     Dim domainsb As New StringBuilder()
                     domainsb.Append("""")
@@ -74,21 +122,19 @@ Public Class DrupalForm
                         form.Add("domain_name", domainsb.ToString())
                         form.Add("domain_time_stamp", timestamp)
                         form.Add("nonce", noncesb.ToString())
-                        form.Add("sessid", sessionIDsb.ToString())
+                        form.Add("sessid", sessIDsb.ToString())
                         'form.Add("display_id", "wibble")
                         'form.Add("args", "wibbleagain")
                         'arbitrary offset and limit to see what ends up in array
                         'form.Add("offset", "5")
                         'form.Add("limit", "10")
-                        form.Add("format_output", "TRUE")
-                        Console.WriteLine("API: " & My.Settings.API_key)
-                        Console.WriteLine("method: " & method)
-                        Console.WriteLine("view name: " & My.Settings.viewname)
-                        Console.WriteLine("hash: " & hash)
-                        Console.WriteLine("domain name: " & My.Settings.domain)
-                        Console.WriteLine("time :" & timestamp)
-                        Console.WriteLine("nonce: " & nonce)
-                        Console.WriteLine("sessid: " & sessionID)
+                        'Console.WriteLine("API: " & My.Settings.API_key)
+                        'Console.WriteLine("method: " & method)
+                        'Console.WriteLine("hash: " & hash)
+                        'Console.WriteLine("domain name: " & My.Settings.domain)
+                        'Console.WriteLine("time :" & timestamp)
+                        'Console.WriteLine("nonce: " & nonce)
+                        'Console.WriteLine("sessid: " & sessionID)
                     Else
                         Throw New Exception("unable to create hash")
                     End If
