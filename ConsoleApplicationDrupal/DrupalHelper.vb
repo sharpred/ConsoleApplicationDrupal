@@ -15,8 +15,10 @@ Public Class DrupalHelper
             job = JObject.Parse(jsonstring)
             'the first part of the json file is the header confirming if the file is an error, the last part
             'contains the data.  The first part of the data contains the session id (sessid)
-            status = job.First.First.ToString
-            If status = "false" Then
+            jtok = job.First
+            status = jtok.ToString()
+            'if it contains false it means it is not an error (duh!)
+            If status.Contains("false") Then
                 Return True
             Else
                 Throw New Exception("drupal error: " & job.Last.ToString())
