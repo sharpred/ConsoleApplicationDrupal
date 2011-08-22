@@ -22,3 +22,7 @@ F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDru
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.xml
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.pdb
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.LoginForm.resources
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.exe.manifest
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.application
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.exe.manifest
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.application

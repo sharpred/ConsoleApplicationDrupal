@@ -173,9 +173,6 @@ Public Class LoginForm
 
     End Sub
 
-    Private Sub RunToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RunToolStripMenuItem.Click
-        runDrupal()
-    End Sub
 
     Private Sub btn_exit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_exit.Click
         Try

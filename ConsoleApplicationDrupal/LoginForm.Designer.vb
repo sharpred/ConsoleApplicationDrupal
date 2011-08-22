@@ -36,7 +36,6 @@ Partial Class LoginForm
         Me.lbl_loggedin = New System.Windows.Forms.Label()
         Me.lbl_viewdata = New System.Windows.Forms.Label()
         Me.lbl_menudata = New System.Windows.Forms.Label()
-        Me.RunToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_exit = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -50,20 +49,20 @@ Partial Class LoginForm
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.ExitToolStripMenuItem, Me.RunToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(104, 70)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(153, 70)
         '
         'OpenToolStripMenuItem
         '
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.OpenToolStripMenuItem.Text = "Open"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'txtbox_username
@@ -135,12 +134,6 @@ Partial Class LoginForm
         Me.lbl_menudata.TabIndex = 8
         Me.lbl_menudata.Text = "menu data"
         '
-        'RunToolStripMenuItem
-        '
-        Me.RunToolStripMenuItem.Name = "RunToolStripMenuItem"
-        Me.RunToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
-        Me.RunToolStripMenuItem.Text = "Run"
-        '
         'btn_exit
         '
         Me.btn_exit.Location = New System.Drawing.Point(146, 313)
@@ -183,6 +176,5 @@ Partial Class LoginForm
     Friend WithEvents lbl_menudata As System.Windows.Forms.Label
     Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RunToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btn_exit As System.Windows.Forms.Button
 End Class
