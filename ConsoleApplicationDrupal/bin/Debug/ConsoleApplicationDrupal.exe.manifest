@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
-  <asmv1:assemblyIdentity name="ConsoleApplicationDrupal.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="ConsoleApplicationDrupal.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="ConsoleApplicationDrupal" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -76,14 +76,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleApplicationDrupal.exe" size="38400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ConsoleApplicationDrupal.exe" size="35840">
       <assemblyIdentity name="ConsoleApplicationDrupal" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>B8I3o3JUFj7TbtSyRnL9QD2BKbo=</dsig:DigestValue>
+        <dsig:DigestValue>Ak46T9TPsLp7C25QUSqmedvj9Hw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -136,14 +136,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.Net35.dll" size="320512">
-      <assemblyIdentity name="Newtonsoft.Json.Net35" version="4.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.Net35.dll" size="325632">
+      <assemblyIdentity name="Newtonsoft.Json.Net35" version="4.0.2.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>61R4zax3QXwqrM8jSNeihrO+zjQ=</dsig:DigestValue>
+        <dsig:DigestValue>JmRIg3pPJnEHfD3/lwEnJOcXPyI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -165,13 +165,13 @@
       <dsig:DigestValue>TVn1Iqoposs7THB0afUAfq2ouGs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Newtonsoft.Json.Net35.dll" size="320512">
+  <file name="log4net.config" size="2283">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>61R4zax3QXwqrM8jSNeihrO+zjQ=</dsig:DigestValue>
+      <dsig:DigestValue>T+NUCcVx20JAlozyD8RxkjVHjpI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

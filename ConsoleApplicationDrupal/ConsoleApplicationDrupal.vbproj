@@ -15,10 +15,10 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -26,8 +26,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.stepupsoftware.co.uk/apps/ConsoleApplicationDrupal/</InstallUrl>
     <UpdateUrl>http://www.stepupsoftware.co.uk/apps/ConsoleApplicationDrupal/</UpdateUrl>
-    <ApplicationRevision>1</ApplicationRevision>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -98,9 +101,9 @@
     <Reference Include="Microsoft.Http.Extensions">
       <HintPath>C:\Program Files\Microsoft WCF REST\WCF REST Starter Kit Preview 2\Assemblies\Microsoft.Http.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json.Net35, Version=4.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json.Net35, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Newtonsoft.Json.Net35.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.4.0.2\lib\net35\Newtonsoft.Json.Net35.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -162,9 +165,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <EmbeddedResource Include="log4net.config">
+    <Content Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <None Include="ConsoleApplicationDrupal_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -181,7 +184,6 @@
     <Content Include="content.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Newtonsoft.Json.Net35.dll" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

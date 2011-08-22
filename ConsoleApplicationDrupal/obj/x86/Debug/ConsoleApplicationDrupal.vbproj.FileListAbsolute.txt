@@ -26,3 +26,5 @@ F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDru
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.application
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.exe.manifest
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.application
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Newtonsoft.Json.Net35.pdb
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\Newtonsoft.Json.Net35.xml
