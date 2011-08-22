@@ -83,7 +83,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("play.sharpred.co.uk")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("drupal.stepupapps.com")>  _
         Public ReadOnly Property domain() As String
             Get
                 Return CType(Me("domain"),String)
@@ -92,10 +92,19 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("/services/json")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("/drupal6/services/json")>  _
         Public ReadOnly Property service() As String
             Get
                 Return CType(Me("service"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("""primary-links""")>  _
+        Public ReadOnly Property menuname() As String
+            Get
+                Return CType(Me("menuname"),String)
             End Get
         End Property
     End Class

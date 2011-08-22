@@ -1,4 +1,5 @@
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\content.xml
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\log4net.config
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.exe.config
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.exe
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\bin\Debug\ConsoleApplicationDrupal.pdb
@@ -20,3 +21,4 @@ F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDru
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.exe
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.xml
 F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.pdb
+F:\Projects\VisualStudio\Personal\ConsoleApplicationDrupal\ConsoleApplicationDrupal\obj\x86\Debug\ConsoleApplicationDrupal.LoginForm.resources

@@ -12,10 +12,13 @@
       <Value Profile="(Default)">http://</Value>
     </Setting>
     <Setting Name="domain" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">play.sharpred.co.uk</Value>
+      <Value Profile="(Default)">drupal.stepupapps.com</Value>
     </Setting>
     <Setting Name="service" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">/services/json</Value>
+      <Value Profile="(Default)">/drupal6/services/json</Value>
+    </Setting>
+    <Setting Name="menuname" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">"primary-links"</Value>
     </Setting>
   </Settings>
 </SettingsFile>

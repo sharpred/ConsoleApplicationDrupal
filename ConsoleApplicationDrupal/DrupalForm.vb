@@ -1,15 +1,36 @@
 ﻿Imports Microsoft.Http
 Imports System.Text
+Imports Common.Logging
 
 Public Class DrupalForm
-    
+    Private log As ILog = LogManager.GetCurrentClassLogger()
+    Private username As String = Nothing
+    Private password As String = Nothing
+
+    Public Property _username
+        Get
+            Return username
+        End Get
+        Set(ByVal value)
+            username = value
+        End Set
+    End Property
+
+    Public Property _password
+        Get
+            Return password
+        End Get
+        Set(ByVal value)
+            password = value
+        End Set
+    End Property
+
+
     Public Function create(ByVal type As String, ByVal authenticate As Boolean, ByVal sessID As String) As HttpMultipartMimeForm
         Dim form As New HttpMultipartMimeForm
         Dim helper As New DrupalHelper
         Dim method As String = Nothing
         Dim methodstring As String = Nothing
-        Dim username As String = "subscriber"
-        Dim password As String = "qwerty123"
         Dim methodsb As New StringBuilder()
 
         Try
@@ -47,29 +68,17 @@ Public Class DrupalForm
                     passwordsb.Append(password)
                     passwordsb.Append("""")
 
-                Case "node"
-                    ' to be added
-                Case "menu"
+                Case "menu.get"
                     method = "menu.get"
-                    'commented out as defaults to primary menus
-                    'Dim menu As String = "primary-links"
-                    'Dim menusb As New StringBuilder()
-                    'menusb.Append("""")
-                    'menusb.Append(password)
-                    'menusb.Append("""")
-                    'form.Add("menu_id", menusb.ToString())
+                    form.Add("menu_id", My.Settings.menuname)
 
-                Case "view"
-                    'method needs to be in quotes
-                    'trying it without quotes for hash
-
+                Case "views.get"
                     method = "views.get"
-
                     form.Add("view_name", My.Settings.viewname)
                     form.Add("format_output", "TRUE")
-                    Console.WriteLine("view name: " & My.Settings.viewname)
+                    log.Debug("view name: " & My.Settings.viewname)
                 Case Else
-                    Throw New Exception("invalid method specified: must be node, menu or view")
+                    Throw New Exception("invalid method specified: must be system.connect, user.login, user.logout, menu.get or views.get")
             End Select
 
             methodsb.Append("""")
@@ -85,10 +94,6 @@ Public Class DrupalForm
                 Dim apikey As String = My.Settings.API_key
                 Dim timestamp As String = helper.getUnixTimestamp()
                 Dim nonce As String = helper.getNonce(10)
-                'not needed as getting session from system.connect call
-                'If sessID = "" Then
-                'sessionID = helper.getNonce(20)
-                'End If
                 Dim sb As New StringBuilder()
 
                 If timestamp IsNot Nothing And nonce IsNot Nothing And sessID IsNot Nothing And domain IsNot Nothing Then
@@ -99,9 +104,7 @@ Public Class DrupalForm
                     sb.Append(nonce)
                     sb.Append(";")
                     sb.Append(method)
-
-                    Console.WriteLine("prehash string: " & sb.ToString())
-
+                    log.Debug("prehash string: " & sb.ToString())
                     Dim hash As String = helper.getHMAC(sb.ToString(), apikey)
 
                     'problems with adding quotes to my fields, so doing it the long way!!
@@ -131,31 +134,16 @@ Public Class DrupalForm
                         form.Add("domain_time_stamp", timestamp)
                         form.Add("nonce", noncesb.ToString())
                         form.Add("sessid", sessIDsb.ToString())
-                        'form.Add("display_id", "wibble")
-                        'form.Add("args", "wibbleagain")
-                        'arbitrary offset and limit to see what ends up in array
-                        'form.Add("offset", "5")
-                        'form.Add("limit", "10")
-                        'Console.WriteLine("API: " & My.Settings.API_key)
-                        'Console.WriteLine("method: " & method)
-                        'Console.WriteLine("hash: " & hash)
-                        'Console.WriteLine("domain name: " & My.Settings.domain)
-                        'Console.WriteLine("time :" & timestamp)
-                        'Console.WriteLine("nonce: " & nonce)
-                        'Console.WriteLine("sessid: " & sessionID)
                     Else
                         Throw New Exception("unable to create hash")
                     End If
                 Else
-                    Throw New Exception("unable to create drupal helper variables")
+                    Throw New Exception("unable to form variables")
                 End If
-            Else
-                'not authenticating.  No extra code here
             End If
         Catch ex As Exception
-            Console.WriteLine(ex.Message)
+            log.Error(ex.Message)
         End Try
         Return form
     End Function
-
 End Class
